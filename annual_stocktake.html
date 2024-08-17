@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="css/growcart.css"> 
+    <title>GrowCART - Annual Stocktake</title> 
+</head>
+<body>
+    <header class="container-fluid">
+        <nav>
+            <ul>
+                <li><strong>GrowCART</strong></li>
+            </ul>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span class="hamburger"></span>
+            </label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracking.html">Plant Tracking</a></li>
+                <li><a href="reporting.html">Reporting</a></li>
+                <li><a href="administration.html">Administration</a></li>
+                <li><a href="#" id="theme_switcher">Toggle theme</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Annual Stocktake</h1>
+
+        <label for="year">Select Year:</label>
+        <input type="number" id="year" name="year" class="input" value="<?php echo date('Y') - 1; ?>" min="2000" max="<?php echo date('Y'); ?>" required>
+        <button type="button" class="button" id="generateReportButton">Generate Report</button>
+
+        <div class="grid"> 
+            <label>
+                <input type="checkbox" id="hideZeroRowsCheckbox"> Hide rows with all zero values
+            </label>
+        </div>
+
+        <section id="plantStocktakeSection" style="display: none;">
+            <h2>Plant Stocktake</h2>
+            <table id="plantStocktakeTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Genetics Name</th>
+                        <th>Start Amount</th>
+                        <th>In</th>
+                        <th>Out</th>
+                        <th>Destroyed</th>
+                        <th>End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="flowerStocktakeSection" style="display: none;">
+            <h2>Flower Stocktake</h2>
+            <table id="flowerStocktakeTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Genetics Name</th>
+                        <th>Start Weight (g)</th>
+                        <th>In (g)</th>
+                        <th>Out (g)</th>
+                        <th>Destroyed (g)</th>
+                        <th>End (g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/growcart.js"></script>
+    <script>
+        const yearInput = document.getElementById('year');
+        const generateReportButton = document.getElementById('generateReportButton');
+        const plantStocktakeSection = document.getElementById('plantStocktakeSection');
+        const flowerStocktakeSection = document.getElementById('flowerStocktakeSection');
+        const hideZeroRowsCheckbox = document.getElementById('hideZeroRowsCheckbox');
+
+        // Set the default value of the year input to the previous year
+        const currentYear = new Date().getFullYear();
+        yearInput.value = currentYear - 1;
+
+        generateReportButton.addEventListener('click', () => {
+            const selectedYear = yearInput.value;
+
+            // Fetch and display plant stocktake data
+            fetch(`get_annual_plant_stocktake.php?year=${selectedYear}`)
+                .then(response => response.json())
+                .then(plantData => {
+                    populateStocktakeTable('plantStocktakeTable', plantData);
+                    plantStocktakeSection.style.display = 'block';
+                    filterStocktakeTables(); // Apply filtering after populating the table
+                })
+                .catch(error => console.error('Error fetching plant stocktake data:', error));
+
+            // Fetch and display flower stocktake data
+            fetch(`get_annual_flower_stocktake.php?year=${selectedYear}`)
+                .then(response => response.json())
+                .then(flowerData => {
+                    populateStocktakeTable('flowerStocktakeTable', flowerData);
+                    flowerStocktakeSection.style.display = 'block';
+                    filterStocktakeTables(); // Apply filtering after populating the table
+                })
+                .catch(error => console.error('Error fetching flower stocktake data:', error));
+        });
+
+        function populateStocktakeTable(tableId, data) {
+            const tableBody = document.getElementById(tableId).getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            data.forEach(item => {
+                const row = tableBody.insertRow();
+                Object.values(item).forEach(value => {
+                    const cell = row.insertCell();
+                    cell.textContent = value;
+                });
+            });
+        }
+
+        hideZeroRowsCheckbox.addEventListener('change', () => {
+            filterStocktakeTables();
+        });
+
+        function filterStocktakeTables() {
+            const tables = [plantStocktakeTable, flowerStocktakeTable];
+
+            tables.forEach(table => {
+                const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+                for (const row of rows) {
+                    const cells = row.getElementsByTagName('td');
+                    let allZero = true;
+                    for (const cell of cells) {
+                        if (parseInt(cell.textContent) !== 0) {
+                            allZero = false;
+                            break;
+                        }
+                    }
+                    row.style.display = (hideZeroRowsCheckbox.checked && allZero) ? 'none' : 'table-row'; 
+                }
+            });
+        }
+
+        // Call filterStocktakeTables initially to apply filtering based on the checkbox's default state
+        filterStocktakeTables();
+    </script>
+</body>
+</html>
