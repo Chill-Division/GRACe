@@ -1,0 +1,6 @@
+deploy.php
+config.php
+uploads/*
+offtakes/*
+police_vet_checks/*
+sops/*
