@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">   
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Delete User</title> 
+    <title>GRACe - Delete User</title> 
 </head>
 <body>
     <header class="container-fluid">

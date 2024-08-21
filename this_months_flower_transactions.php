@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="css/growcart.css">
-    <title>GrowCART - This Month's Flower Transactions (Out)</title>
+    <title>GRACe - This Month's Flower Transactions (Out)</title>
 </head>
 <body>
     <header class="container-fluid">
@@ -16,6 +16,8 @@
 
     <main class="container">
         <h1>This Month's Flower Transactions (Out)</h1>
+
+        <p><small>Preview of transactions prior to the end of the month for sending to the Medicinal Cannabis Agency.</small></p>
 
         <p>Total Weight Sent Out: <span id="totalWeightSent">0</span> grams</p>
 

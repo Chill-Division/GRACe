@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="css/growcart.css">
-    <title>GrowCART - Harvest/Destroy Plants</title>
+    <title>GRACe - Harvest/Destroy Plants</title>
 </head>
 <body>
     <header class="container-fluid">
@@ -16,6 +16,8 @@
 
     <main class="container">
         <h1>Harvest/Destroy Plants</h1>
+
+        <p><small>Mark plants as harvested at the end of a season.</small></p>
 
         <label for="action">Action:</label>
         <select id="action" name="action" class="input" required>

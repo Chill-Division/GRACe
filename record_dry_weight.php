@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Record Flower Transaction</title> 
+    <title>GRACe - Record Flower Transaction</title> 
 </head>
 <body>
     <header class="container-fluid">
@@ -18,6 +18,8 @@
         <div id="statusMessage" class="status-message" style="display: none;"></div> 
 
         <h1>Record Flower Transaction</h1>
+
+	<p><small>If you are harvesting flower, receiving a sample, destroying, or sending off for testing, you can do it all from here.</small></p>
 
         <form id="recordFlowerTransactionForm" class="form" action="record_flower_transaction.php" method="post">
             <label for="geneticsName">Genetics:</label>

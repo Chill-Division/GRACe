@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">   
 
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Administration</title> 
+    <title>GRACe - Administration</title> 
 </head>
 <body>
     <header class="container-fluid">

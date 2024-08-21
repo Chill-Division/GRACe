@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="css/growcart.css">
-    <title>GrowCART Login</title>
+    <title>GRACe Login</title>
 </head>
 <body>
     <header class="container-fluid">
@@ -15,7 +15,7 @@
     <main class="container">
         <article class="" style="width: 60%;margin: auto;">
             <div style="width: 100%;">
-                <p>Grow (C)ompliance (A)nd (R)egulatory (T)racking, by Chill Division</p>
+                <p>GRACe (Grower's Regulatory Assistance & Compliance Engine)</p>
 
                 <form id="loginForm" class="form" action="login.php" method="post"> <label for="username">Username:</label>
                     <input type="text" id="username" name="username" class="input" required>
@@ -27,7 +27,7 @@
                 </form>
 
                 <div id="loggedInSection" style="display: none;">
-                    <h2>Welcome to GrowCART</h2>
+                    <h2>Welcome to GRACe</h2>
                     <p>You are now logged in.</p>
                 </div>
             </div>

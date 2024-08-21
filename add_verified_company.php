@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">   
 
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Add Verified Company</title> 
+    <title>GRACe - Add Verified Company</title> 
 </head>
 <body>
     <header class="container-fluid">
@@ -20,6 +20,8 @@
         <div id="statusMessage" class="status-message" style="display: none;"></div> 
 
         <h1>Add Verified Company</h1>
+
+        <p><small>Companies added here will show up as a destination in the forms for CoC / Testing.</small></p>
 
         <form id="addCompanyForm" class="form">
             <label for="companyName">Company Name:</label>

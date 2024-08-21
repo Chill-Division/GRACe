@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Receive Genetics</title> 
+    <title>GRACe - Receive Genetics</title> 
 </head>
 <body>
     <header class="container-fluid">
@@ -18,6 +18,8 @@
         <div id="statusMessage" class="status-message" style="display: none;"></div> 
 
         <h1>Receive Genetics</h1>
+
+	<p><small>Any time you're receiving or adding genetics, either through a Form D declaration, taking clones, or from another licensed cultivator, this is where you want to add them.</small></p>
 
         <form id="receiveGeneticsForm" class="form" action="handle_receive_genetics.php" method="post"> 
 

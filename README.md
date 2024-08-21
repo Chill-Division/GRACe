@@ -1,5 +1,13 @@
-# GrowCART
-Grow (C)ompliance (A)nd (R)egulatory (T)racking
+# GRACe
+GRACe (Grower's Regulatory Assistance & Compliance Engine) Portal for small cultivators
+
+Take back your time, focus on your garden, while GRACe looks after your regulatory compliance
+
+* Annual reporting / stock-take
+* Monthly summaries for the Medicinal Cannabis Agency
+* Minimal effort for plant tracking
+* Easy Chain of Custody creation
+* Automatic emails (coming soon)
 
 ## Installation instructions for Ubuntu 24.04
 
@@ -17,11 +25,11 @@ You should be able to run:
 <pre>free -m</pre>
 And see:
 <pre>
-root@growcart:~# free -m
+root@grace:~# free -m
                total        used        free      shared  buff/cache   available
 Mem:             458         177         189           6         118         280
 Swap:           2047           0        2047
-root@growcart:~#
+root@grace:~#
 </pre>
 
 
@@ -87,8 +95,8 @@ Follow the prompts and setup SSL. It should restart nginx for you automatically!
 ### Clone the repo
 Setup still needs extra work with importing SQL but this is a start;
 <pre>
-git clone https://github.com/Chill-Division/GrowCART.git
-cd GrowCART
+git clone https://github.com/Chill-Division/GRACe.git
+cd GRACe
 cp config-example.php config.php
 mkdir uploads offtakes police_vet_checks sops
 </pre>
@@ -100,13 +108,13 @@ Don't forget to set the password for your database which you're about to create 
 
 Then run the following from within mysql / mariadb
 <pre>-- Create a new database
-CREATE DATABASE GrowCART;
+CREATE DATABASE grace_db;
 
 -- Create a new user with a password
-CREATE USER 'growcart'@'localhost' IDENTIFIED BY 'Your_P@ssw0rd_Goes_Here!';
+CREATE USER 'grace_user'@'localhost' IDENTIFIED BY 'Your_P@ssw0rd_Goes_Here!';
 
--- Grant all privileges on the GrowCART database to the new user
-GRANT ALL PRIVILEGES ON GrowCART.* TO 'growcart'@'localhost';
+-- Grant all privileges on the GRACe database to the new user
+GRANT ALL PRIVILEGES ON grace_db.* TO 'grace_user'@'localhost';
 
 -- Flush privileges to apply the changes immediately
 FLUSH PRIVILEGES;</pre>
@@ -114,10 +122,10 @@ FLUSH PRIVILEGES;</pre>
 Then type "\q" to exit.
 
 Then the following will get the database schema ready for you
-<pre>mysql -u growcart -p GrowCART < growcart-schema.sql</pre>
+<pre>mysql -u grace_user -p grace_db < grace-schema.sql</pre>
 
 ### Initial login
-Once installed, simply browse to your servers IP /GrowCART/
+Once installed, simply browse to your servers IP /GRACe/
 
 You'll want to log in with:
 <pre>User: default

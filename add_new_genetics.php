@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">   
 
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Add New Genetics</title> 
+    <title>GRACe - Add New Genetics</title> 
     <style>
         /* Add some basic styling for the status message */
         .status-message {

@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Annual Stocktake</title> 
+    <title>GRACe - Annual Stocktake</title> 
 </head>
 <body>
     <header class="container-fluid">
@@ -16,6 +16,8 @@
 
     <main class="container">
         <h1>Annual Stocktake</h1>
+
+        <p><small>This will generate a full in / out of plants / flower for you to stock-take, and reconcile against prior to sending details through to the Medicinal Cannabis Agency in January.</small></p>
 
         <label for="year">Select Year:</label>
         <input type="number" id="year" name="year" class="input" value="<?php echo date('Y') - 1; ?>" min="2000" max="<?php echo date('Y'); ?>" required>

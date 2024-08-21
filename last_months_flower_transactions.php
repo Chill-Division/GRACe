@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Last Month's Flower Transactions (Out)</title> 
+    <title>GRACe - Last Month's Flower Transactions (Out)</title> 
 </head>
 <body>
     <header class="container-fluid">

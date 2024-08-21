@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">   
 
     <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GrowCART - Generate Shipping Manifest</title> 
+    <title>GRACe - Generate Shipping Manifest</title> 
     <style>
         /* Additional styles for the manifest layout */
         #manifest {

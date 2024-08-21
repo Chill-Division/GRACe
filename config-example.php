@@ -2,7 +2,7 @@
 <?php
 // Configuration stuff goes here
 $servername = "localhost";
-$username = "growcart";
+$username = "grace_user";
 $password = "your_password2";
-$dbname = "GrowCART";
+$dbname = "grace_db";
 ?>

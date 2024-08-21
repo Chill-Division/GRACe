@@ -1,6 +1,6 @@
         <nav>
             <ul>
-                <li><strong>GrowCART</strong></li>
+                <li><strong>GRACe by Chill Division</strong></li>
             </ul>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
