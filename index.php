@@ -15,7 +15,7 @@
     <main class="container">
         <article class="" style="width: 60%;margin: auto;">
             <div style="width: 100%;">
-                <p>GRACe (Grower's Regulatory Assistance & Compliance Engine)</p>
+                <p style="text-align: center;">GRACe<br />Grower's Regulatory Assistance & Compliance Engine</p>
 
                 <form id="loginForm" class="form" action="login.php" method="post"> <label for="username">Username:</label>
                     <input type="text" id="username" name="username" class="input" required>
