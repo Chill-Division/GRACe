@@ -49,12 +49,13 @@
         <section>
             <h2>System Management</h2>
             <ul>
+                <li><a href="own_company.php">Update company information</a></li>
                 <li><a href="add_new_user.php">Add New User</a></li>
                 <li><a href="delete_user.php">Delete User</a></li>
             </ul>
         </section>
     </main>
 
-    <script src="js/growcart.js"></script> 
+    <script src="js/growcart.js"></script>
 </body>
 </html>

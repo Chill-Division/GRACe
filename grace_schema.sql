@@ -85,5 +85,16 @@ CREATE TABLE SOPs (
     file_path VARCHAR(255)
 );
 
+-- Create table for your own company details
+CREATE TABLE OwnCompany (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT, 
+    company_name VARCHAR(255) NOT NULL,
+    company_license_number VARCHAR(255) NOT NULL,
+    company_address TEXT,
+    primary_contact_email VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
 -- Create the default user
 INSERT INTO Users (first_name, surname, username, password) VALUES ('Temporary', 'Admin', 'default', '$2y$10$S9tzSUjBRZRbbhUvdvQXeub36Z0C3ScPgCVDLIIyaZ6LmQ8xfuYpK');
