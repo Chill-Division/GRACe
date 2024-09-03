@@ -44,6 +44,10 @@ dpkg-reconfigure -f noninteractive tzdata
 <pre>apt-get update
 apt install nginx mysql-server php8.3 php8.3-fpm php-mysql php-cli python3-certbot-nginx -y</pre>
 
+Or for Debian 12 Bookworm:
+<pre>curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash
+apt install nginx mariadb-server php8.2 php8.2-fpm php-mysql php-cli python3-certbot-nginx</pre>
+
 Then we remove the default index files, we don't need those any more:
 <pre>rm -f /var/www/html/index.html /var/www/html/index.nginx-debian.html</pre>
 
