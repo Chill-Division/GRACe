@@ -136,3 +136,5 @@ You'll want to log in with:
 Pass: changeme</pre>
 
 Go to the Administration page and add a new user. Log out. Log in as your new user. Remove the "default" user.
+
+After you have done this, go in to Administration and then choose Update Company Information, filling in your own company details
