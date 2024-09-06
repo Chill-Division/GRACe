@@ -39,6 +39,8 @@
 
         <h1>Add New Genetics</h1>
 
+	<p>Prior to genetics being available to clone or receive, they need to be added into your system here.</p>
+
         <form id="addGeneticsForm" class="form" action="add_new_genetics.php" method="post">
             <label for="geneticsName">Genetics Name:</label>
             <input type="text" id="geneticsName" name="geneticsName" class="input" required>

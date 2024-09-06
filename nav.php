@@ -7,7 +7,6 @@
                 <span class="hamburger"></span>
             </label>
             <ul>
-                <li><a href="index.php">Home</a></li>
                 <li><a href="tracking.php">Plant Tracking</a></li>
                 <li><a href="reporting.php">Reporting</a></li>
                 <li><a href="administration.php">Administration</a></li>
