@@ -3,11 +3,11 @@
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">   
-    <link rel="stylesheet" href="css/growcart.css"> 
-    <title>GRACe - Delete User</title> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="css/growcart.css">
+    <title>GRACe - Delete User</title>
 </head>
 <body>
     <header class="container-fluid">
@@ -32,7 +32,7 @@
         </table>
     </main>
 
-    <script src="js/growcart.js"></script> 
+    <script src="js/growcart.js"></script>
 <script>
     const userList = document.getElementById('userList').getElementsByTagName('tbody')[0];
 
@@ -50,12 +50,14 @@
                 row.insertCell().textContent = user.username;
                 row.insertCell().textContent = user.first_name;
                 row.insertCell().textContent = user.surname;
-                row.insertCell().textContent = user.last_logged_in || 'Never';
-                
+                row.insertCell().textContent = user.last_logged_in
+                    ? user.last_logged_in.slice(0, 16) // Extract YYYY-MM-DD HH:mm
+                    : 'Never';
+
                 const actionCell = row.insertCell();
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
-                deleteButton.classList.add('button'); 
+                deleteButton.classList.add('button');
                 deleteButton.addEventListener('click', () => {
                     if (confirm(`Are you sure you want to delete user ${user.username}?`)) {
                         fetch('handle_delete_user.php', {
